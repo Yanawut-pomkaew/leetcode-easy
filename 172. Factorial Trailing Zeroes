@@ -1,0 +1,24 @@
+class Solution {
+public:
+    int trailingZeroes(int n) {
+        
+        // zero in number are extracted by 5
+        // 5! = 120 -- 1 zero counts (5 x 1)
+        // 10! = 3628800 -- 2 zero counts (5 x 2)
+        // 15! -- 3 zero counts (5 x 3) , ......
+        // 25! = 15511210043330985984000000 -- 6 zero counts
+        // (it's 5 x 5)
+
+        int k = 0;
+
+        int nums = n;
+
+        while(nums >= 5) {
+            nums = nums / 5;
+            k+= nums;
+        }
+
+
+        return k;
+    }
+};
